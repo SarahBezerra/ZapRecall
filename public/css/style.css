@@ -1,6 +1,12 @@
+body {
+    background-color: #E5E5E5;
+    padding-bottom: 40px;
+}
+
 .root {
     width: 100%;
     height: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,4 +36,64 @@
 .icon_next {
     width: 18px;
     margin-left: 7px;
+}
+
+
+.topo {
+    width: 100%;
+}
+
+.topo .logo-mini {
+    height: 54px;
+    margin-top: 26px;
+    margin-left: 32px;
+}
+
+.corpo {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.corpo .flashcard {
+    width: 392px;
+    height: 575px;
+    margin-top: 100px;
+    padding: 15px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.corpo .flashcard .level {
+    font-size: 18px;
+    font-weight: 400;
+    
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.corpo .flashcard .question {
+    font-size: 28px;
+    font-weight: 700;
+
+    display: flex;
+    justify-content: center;
+}
+
+.corpo .flashcard .turn {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.icon-turn {
+    width: 39px;
 }
