@@ -1,0 +1,33 @@
+.root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image_logo {
+    width: 218px;
+    margin-bottom: 100px;
+}
+
+.button_start {
+    width: 345px;
+    height: 72px;
+
+    border: solid 3px #FFEF61;
+    border-radius: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon_next {
+    width: 18px;
+    margin-left: 7px;
+}
