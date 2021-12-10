@@ -1,6 +1,7 @@
 import { useState } from "react";
+import FlashcardFront from "./FlashcardFront";
 
-export default function Card() {
+export default function Card(props) {
 
     const [side, setSide] = useState("front");
 
@@ -17,13 +18,7 @@ export default function Card() {
 
     if(side === "front"){
         return(
-            <div className="body">
-                <div className="flashcard flashcard-front">
-                    <div className="level"> {`${cards[0].level}/8`} </div>
-                    <div className="question"> {cards[0].question} </div>
-                    <div className="turn"> <img src="./assets/turn.png" className="icon-turn" onClick={() => setSide("behind")}/></div>
-                </div>
-            </div>
+            <FlashcardFront setSide={setSide} cards={cards}/>
         );
     }else if(side === "behind"){
         return(
@@ -33,7 +28,7 @@ export default function Card() {
                     <span className="level"> {`${cards[0].level}/8`} </span>
                     <div className="answer"> {cards[0].answer} </div>
                     <div className="opcoes-behind">
-                        <div className="opcao opcao1">Aprendi{'\n'}agora</div>
+                        <div className="opcao opcao1" onClick={() => props.setScreen("proxCard")}>Aprendi{'\n'}agora</div>
                         <div className="opcao opcao2">Não{'\n'}lembrei</div>
                         <div className="opcao opcao3">Lembrei{'\n'}com{'\n'}esforço</div>
                         <div className="opcao opcao4">Zap!</div>
