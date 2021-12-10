@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Card from "./components/Card";
 
 export default function App() {
 
@@ -18,16 +19,12 @@ export default function App() {
     }else if(screen === "flashcard"){
         return(
             <>
-            <header className="topo">
+            <header className="header">
                 <img src="./assets/logo-mini.png" className="logo-mini"></img>
             </header>
 
-            <div className="corpo">
-                <div className="flashcard">
-                    <div className="level">1/8</div>
-                    <div className="question">Pergunta</div>
-                    <div className="turn"><img src="./assets/turn.png" className="icon-turn"></img></div>
-                </div>
+            <div className="body">
+                <Card />
             </div>
             </>
         );
