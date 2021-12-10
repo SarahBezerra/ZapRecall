@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FlashcardFront from "./FlashcardFront";
+import FlashcardBack from "./FlashcardBack";
 
 export default function Card(props) {
 
@@ -20,21 +21,10 @@ export default function Card(props) {
         return(
             <FlashcardFront setSide={setSide} cards={cards}/>
         );
+        
     }else if(side === "behind"){
         return(
-            <div className="body">
-                <div className="flashcard">
-                    <span className="question-behind">{cards[0].question}</span>
-                    <span className="level"> {`${cards[0].level}/8`} </span>
-                    <div className="answer"> {cards[0].answer} </div>
-                    <div className="opcoes-behind">
-                        <div className="opcao opcao1" onClick={() => props.setScreen("proxCard")}>Aprendi{'\n'}agora</div>
-                        <div className="opcao opcao2">Não{'\n'}lembrei</div>
-                        <div className="opcao opcao3">Lembrei{'\n'}com{'\n'}esforço</div>
-                        <div className="opcao opcao4">Zap!</div>
-                    </div>
-                </div>
-            </div>
+            <FlashcardBack setSide={setSide} cards={cards}/>
         );
     }
 
