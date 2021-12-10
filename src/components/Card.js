@@ -17,23 +17,27 @@ export default function Card() {
 
     if(side === "front"){
         return(
-            <div className="flashcard flashcard-front">
-                <div className="level"> {`${cards[0].level}/8`} </div>
-                <div className="question"> {cards[0].question} </div>
-                <div className="turn"> <img src="./assets/turn.png" className="icon-turn" onClick={() => setSide("behind")}/></div>
+            <div className="body">
+                <div className="flashcard flashcard-front">
+                    <div className="level"> {`${cards[0].level}/8`} </div>
+                    <div className="question"> {cards[0].question} </div>
+                    <div className="turn"> <img src="./assets/turn.png" className="icon-turn" onClick={() => setSide("behind")}/></div>
+                </div>
             </div>
         );
     }else if(side === "behind"){
         return(
-            <div className="flashcard">
-                <span className="question-behind">{cards[0].question}</span>
-                <span className="level"> {`${cards[0].level}/8`} </span>
-                <div className="answer"> {cards[0].answer} </div>
-                <div className="opcoes-behind">
-                    <div className="opcao opcao1">Aprendi{'\n'}agora</div>
-                    <div className="opcao opcao2">Não{'\n'}lembrei</div>
-                    <div className="opcao opcao3">Lembrei{'\n'}com{'\n'}esforço</div>
-                    <div className="opcao opcao4">Zap!</div>
+            <div className="body">
+                <div className="flashcard">
+                    <span className="question-behind">{cards[0].question}</span>
+                    <span className="level"> {`${cards[0].level}/8`} </span>
+                    <div className="answer"> {cards[0].answer} </div>
+                    <div className="opcoes-behind">
+                        <div className="opcao opcao1">Aprendi{'\n'}agora</div>
+                        <div className="opcao opcao2">Não{'\n'}lembrei</div>
+                        <div className="opcao opcao3">Lembrei{'\n'}com{'\n'}esforço</div>
+                        <div className="opcao opcao4">Zap!</div>
+                    </div>
                 </div>
             </div>
         );

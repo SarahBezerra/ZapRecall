@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useState } from "react";
+import Home from './components/Home';
+import Header from './components/Header';
 import Card from "./components/Card";
 
 export default function App() {
@@ -7,25 +9,14 @@ export default function App() {
 
     if(screen === "home") {
         return(
-            <>
-            <img  className="image_logo" src="./assets/logo.png" alt="logo zaprecall"/>
-            <button className="button_start" onClick={() => setScreen("flashcard")}>
-                Praticar React
-                <img className="icon_next" src="./assets/next.png" alt="icon next"/>
-            </button>
-            </>
+            <Home setScreen={setScreen}/>
         );
 
     }else if(screen === "flashcard"){
         return(
             <>
-            <header className="header">
-                <img src="./assets/logo-mini.png" className="logo-mini"></img>
-            </header>
-
-            <div className="body">
-                <Card />
-            </div>
+            <Header />
+            <Card />
             </>
         );
     }
