@@ -4,7 +4,7 @@ export default function FlashcardBack(props) {
 
     return(
         <div className="body">
-            <div className="flashcard">
+            <div className="flashcard" data-identifier="flashcard">
                 <div></div>
                 <div className="question-behind">{props.cards[props.question].question}</div>
                 <Level cards={props.cards} level={props.cards[props.question].level}/>

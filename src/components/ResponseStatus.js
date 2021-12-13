@@ -4,7 +4,7 @@ import Turn from "./Turn";
 export default function ResponseStatus(props) {
     return(
         <div className="body">
-            <div className={`flashcard flashcard-center ${props.opcao}`}>
+            <div className={`flashcard flashcard-center ${props.opcao}`} data-identifier="flashcard">
                 <span className="question-behind">{props.cards[props.question].question}</span>
                 <Level cards={props.cards} level={props.cards[props.question].level}/>
                 <div className="answer"> {props.cards[props.question].answer} </div>

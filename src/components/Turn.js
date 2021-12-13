@@ -2,7 +2,7 @@ import icon_turn from "../assets/turn.png";
 
 export default function Turn(props) {
     return(
-        <div className="turn">
+        <div className="turn" data-identifier="arrow">
             <img src={icon_turn} className="icon-turn" alt="" onClick={() => changeCard(props.setSide, props.side, props.setQuestion, props.question, props.setScreen, props.cards)}/>
         </div>
     );

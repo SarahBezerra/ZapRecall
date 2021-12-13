@@ -4,7 +4,7 @@ import Level from "./Level";
 export default function FlashcardFront(props) {
     return(
         <div className="body">
-            <div className="flashcard flashcard-center">
+            <div className="flashcard flashcard-center" data-identifier="flashcard">
                 <Level cards={props.cards} level={props.cards[props.question].level}/>
                 <div className="question"> {props.cards[props.question].question} </div>
                 <Turn setSide={props.setSide} side={props.side} setQuestion={props.setQuestion} question={props.question} cards={props.cards} setScreen={props.setScreen}/>
