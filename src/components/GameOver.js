@@ -4,20 +4,22 @@ import sad from '../assets/sad.png';
 export default function GameOver(props) {
     if(props.sucess === true){
         return(
-            <>
-            <h1>PARABÉNS!</h1>
-            <img src={party} alt="emoji_party"/>
-            <p>Você não esqueceu de nenhum flashcard!</p>
-            </>
+            <div className="body">
+                <div className="box">
+                    <h1 className="title">PARABÉNS!<img src={party} className="emoji_party" alt="emoji_party"/></h1>
+                    <p className="message">Você não esqueceu de nenhum flashcard!</p>
+                </div>
+            </div>
         );
     
     }else{
         return(
-            <>
-            <h1>Putz..</h1>
-            <img src={sad} alt="emoji_sad"/>
-            <p>Você esqueceu alguns flashcards..{'\n'}Não desanime! Na próxima você consegue!</p>
-            </>
+            <div className="body">
+                <div className="box">
+                    <h1 className="title">Putz..<img src={sad} className="emoji_sad" alt="emoji_sad"/></h1>
+                    <p className="message">Você esqueceu alguns flashcards..{'\n'}Não desanime! Na próxima você consegue!</p>
+                </div>
+            </div>
         );
     }
 }
