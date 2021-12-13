@@ -5,10 +5,10 @@ export default function ResponseStatus(props) {
     return(
         <div className="body">
             <div className={`flashcard flashcard-center ${props.opcao}`}>
-                <span className="question-behind">{props.cards[0].question}</span>
-                <Level cards={props.cards}/>
-                <div className="answer"> {props.cards[0].answer} </div>
-                <Turn setSide={props.setSide} side={props.side} />
+                <span className="question-behind">{props.cards[props.question].question}</span>
+                <Level cards={props.cards} level={props.cards[props.question].level}/>
+                <div className="answer"> {props.cards[props.question].answer} </div>
+                <Turn setSide={props.setSide} side={props.side} setQuestion={props.setQuestion} question={props.question} cards={props.cards}/>
             </div>
         </div>
     );

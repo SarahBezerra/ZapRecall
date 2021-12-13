@@ -7,6 +7,7 @@ export default function Card(props) {
 
     const [side, setSide] = useState("front");
     const [opcao, setOpcao] = useState("");
+    const [question, setQuestion] = useState(0);
 
     const cards = [ 
         {level:1, question:"O que é JSX?", answer:"Uma extensão de linguagem do JavaScript"},
@@ -21,21 +22,17 @@ export default function Card(props) {
 
     if(side === "front"){
         return(
-            <FlashcardFront setSide={setSide} side={side} cards={cards}/>
+            <FlashcardFront setSide={setSide} side={side} cards={cards} setQuestion={setQuestion} question={question}/>
         );
         
     }else if(side === "behind"){
         return(
-            <FlashcardBack setSide={setSide} cards={cards} setOpcao={setOpcao} opcao={opcao}/>
+            <FlashcardBack setSide={setSide} cards={cards} setOpcao={setOpcao} opcao={opcao} setQuestion={setQuestion} question={question}/>
         );
 
     }else if (side === "response_status"){
         return (
-            <ResponseStatus setSide={setSide} side={side} cards={cards} setOpcao={setOpcao} opcao={opcao} />
+            <ResponseStatus setSide={setSide} side={side} setOpcao={setOpcao} opcao={opcao} cards={cards} setQuestion={setQuestion} question={question}/>
         );
     }
-
-    //const [level, setLevel] = useState(cards[0].level);
-    //const [question, setQuestion] = useState(cards[0].question);
-    //const [answer, setAnswer] = useState(cards[0].answer);
 }

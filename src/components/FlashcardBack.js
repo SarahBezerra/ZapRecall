@@ -6,9 +6,9 @@ export default function FlashcardBack(props) {
         <div className="body">
             <div className="flashcard">
                 <div></div>
-                <div className="question-behind">{props.cards[0].question}</div>
-                <Level cards={props.cards}/>
-                <div className="answer"> {props.cards[0].answer} </div>
+                <div className="question-behind">{props.cards[props.question].question}</div>
+                <Level cards={props.cards} level={props.cards[props.question].level}/>
+                <div className="answer"> {props.cards[props.question].answer} </div>
                 <div className="opcoes-behind">
                     <div className="opcao opcao1" onClick={() => {props.setOpcao("neutral"); props.setSide("response_status")}} >Aprendi{'\n'}agora</div>
                     <div className="opcao opcao2" onClick={() => {props.setOpcao("incorrect"); props.setSide("response_status")}}>Não{'\n'}lembrei</div>
