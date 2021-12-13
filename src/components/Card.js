@@ -6,7 +6,7 @@ export default function Card(props) {
 
     const [side, setSide] = useState("front");
 
-    const cards = [
+    const cards = [ 
         {level:1, question:"O que é JSX?", answer:"Uma extensão de linguagem do JavaScript"},
         {level:2, question:"O React é __", answer:"Uma biblioteca JavaScript para construção de interfaces"},
         {level:3, question:"Componentes devem iniciar com __", answer:"Letra maiúscula"},
@@ -19,7 +19,7 @@ export default function Card(props) {
 
     if(side === "front"){
         return(
-            <FlashcardFront setSide={setSide} cards={cards}/>
+            <FlashcardFront setSide={setSide} side={side} cards={cards}/>
         );
         
     }else if(side === "behind"){
