@@ -1,9 +1,11 @@
+import Level from "./Level";
+
 export default function FlashcardBack(props) {
     return(
         <div className="body">
             <div className="flashcard">
                 <span className="question-behind">{props.cards[0].question}</span>
-                <span className="level"> {`${props.cards[0].level}/8`} </span>
+                <Level cards={props.cards}/>
                 <div className="answer"> {props.cards[0].answer} </div>
                 <div className="opcoes-behind">
                     <div className="opcao opcao1" onClick={() => props.setScreen("proxCard")}>Aprendi{'\n'}agora</div>

@@ -26,7 +26,12 @@ export default function Card(props) {
         return(
             <FlashcardBack setSide={setSide} cards={cards}/>
         );
-    }
+
+    }//else if (side === "answered"){
+       // return (
+            //<FlashcardAnswered setSide={setSide} cards={cards}/>
+      //  );
+    //}
 
     //const [level, setLevel] = useState(cards[0].level);
     //const [question, setQuestion] = useState(cards[0].question);
