@@ -1,10 +1,12 @@
 import { useState } from "react";
 import FlashcardFront from "./FlashcardFront";
 import FlashcardBack from "./FlashcardBack";
+import ResponseStatus from "./ResponseStatus";
 
 export default function Card(props) {
 
     const [side, setSide] = useState("front");
+    const [opcao, setOpcao] = useState("");
 
     const cards = [ 
         {level:1, question:"O que é JSX?", answer:"Uma extensão de linguagem do JavaScript"},
@@ -24,14 +26,14 @@ export default function Card(props) {
         
     }else if(side === "behind"){
         return(
-            <FlashcardBack setSide={setSide} cards={cards}/>
+            <FlashcardBack setSide={setSide} cards={cards} setOpcao={setOpcao} opcao={opcao}/>
         );
 
-    }//else if (side === "answered"){
-       // return (
-            //<FlashcardAnswered setSide={setSide} cards={cards}/>
-      //  );
-    //}
+    }else if (side === "response_status"){
+        return (
+            <ResponseStatus setSide={setSide} side={side} cards={cards} setOpcao={setOpcao} opcao={opcao} />
+        );
+    }
 
     //const [level, setLevel] = useState(cards[0].level);
     //const [question, setQuestion] = useState(cards[0].question);
