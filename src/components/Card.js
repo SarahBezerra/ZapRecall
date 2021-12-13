@@ -7,7 +7,6 @@ export default function Card(props) {
 
     const [side, setSide] = useState("front");
     const [opcao, setOpcao] = useState("");
-    const [question, setQuestion] = useState(7);
 
     const cards = [ 
         {level:1, question:"O que é JSX?", answer:"Uma extensão de linguagem do JavaScript"},
@@ -22,17 +21,17 @@ export default function Card(props) {
 
     if(side === "front"){
         return(
-            <FlashcardFront setSide={setSide} side={side} cards={cards} setQuestion={setQuestion} question={question} setScreen={props.setScreen}/>
+            <FlashcardFront setSide={setSide} side={side} cards={cards} setQuestion={props.setQuestion} question={props.question} setScreen={props.setScreen}/>
         );
         
     }else if(side === "behind"){
         return(
-            <FlashcardBack setSide={setSide} cards={cards} setOpcao={setOpcao} opcao={opcao} setQuestion={setQuestion} question={question} setSucess={props.setSucess} sucess={props.sucess}/>
+            <FlashcardBack setSide={setSide} cards={cards} setOpcao={setOpcao} opcao={opcao} setQuestion={props.setQuestion} question={props.question} setSucess={props.setSucess} sucess={props.sucess}/>
         );
 
     }else if (side === "response_status"){
         return (
-            <ResponseStatus setSide={setSide} side={side} setOpcao={setOpcao} opcao={opcao} cards={cards} setQuestion={setQuestion} question={question} setScreen={props.setScreen}/>
+            <ResponseStatus setSide={setSide} side={side} setOpcao={setOpcao} opcao={opcao} cards={cards} setQuestion={props.setQuestion} question={props.question} setScreen={props.setScreen}/>
         );
     }
 }

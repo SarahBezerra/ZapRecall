@@ -18,7 +18,7 @@ body {
     margin-bottom: 100px;
 }
 
-.button_start {
+.button {
     width: 345px;
     height: 72px;
 
@@ -208,6 +208,8 @@ body {
     font-size: 36px;
     font-weight: 700;
     line-height: 42.19px;
+
+    margin-bottom: 15px;
 }
 
 .body .emoji {
@@ -224,4 +226,5 @@ body {
     line-height: 25.78px;
 
     text-align: center;
+    margin-bottom: 20px;
 }

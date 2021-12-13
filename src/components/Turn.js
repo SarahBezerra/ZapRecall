@@ -14,9 +14,9 @@ function changeCard(setSide, side, setQuestion, question, setScreen, cards) {
     
     }else{
         setQuestion(question + 1);
-        if(question < cards.length-1){
-            setSide("front");
-        }else{
+        setSide("front");
+
+        if(question === cards.length-1){
             setScreen("game_over");
         }
     }
